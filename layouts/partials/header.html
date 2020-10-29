@@ -1,14 +1,12 @@
 <header>
 	<img src="/{{ .Site.Params.image }}" alt="{{ .Site.Params.image_alt }}" />
+
 	{{ if .IsHome }}<h1>{{ else }}<h3>{{ end }}
 	<a href="/">{{ .Site.Params.title }}</a>
 	{{ if .IsHome }}</h1>{{ else }}</h3>{{ end }}
 
-	{{ if .IsHome }}
-	{{ end }}
-
 	<ul>
-		{{ range .Site.Menus.header.ByWeight.Reverse }}
+		{{ range .Site.Menus.main.ByWeight.Reverse }}
 		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
 		{{ end }}
 	</ul>
@@ -18,4 +16,5 @@
 		{{ partial "headerAdditional.html" . }}
 	</div>
 	{{ end }}
+
 </header>
