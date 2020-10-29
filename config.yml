@@ -1,0 +1,31 @@
+---
+params:
+  image: penny.jpg
+  image_alt: Penny
+  title: Miss Moneypenny
+  description: my theme
+  meta:
+    description: meta here
+    keywords: dog, rescue
+    author: penny
+    twitter:
+      site: "@davidwinter"
+      creator: "@davidwinter"
+      domain: http://davidwinter.dev
+menu:
+  header:
+    - identifier: about
+      name: About
+      url: /about
+    - identifier: twitter
+      name: Twitter
+      url: https://twitter.com
+    - identifier: github
+      name: GitHub
+      url: https://github.com
+    - identifier: instagram
+      name: Instagram
+      url: https://instagram.com
+    - identifier: linkedin
+      name: LinkedIn
+      url: https://linkedin.com

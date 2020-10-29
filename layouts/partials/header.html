@@ -1,0 +1,21 @@
+<header>
+	<img src="/{{ .Site.Params.image }}" alt="{{ .Site.Params.image_alt }}" />
+	{{ if .IsHome }}<h1>{{ else }}<h3>{{ end }}
+	<a href="/">{{ .Site.Params.title }}</a>
+	{{ if .IsHome }}</h1>{{ else }}</h3>{{ end }}
+
+	{{ if .IsHome }}
+	{{ end }}
+
+	<ul>
+		{{ range .Site.Menus.header }}
+		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+		{{ end }}
+	</ul>
+
+	{{ if templates.Exists "partials/headerAdditional.html" }}
+	<div>
+		{{ partial "headerAdditional.html" . }}
+	</div>
+	{{ end }}
+</header>

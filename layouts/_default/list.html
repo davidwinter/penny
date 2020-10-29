@@ -1,0 +1,12 @@
+{{ define "main" }}
+	<ol class="posts">
+		{{ range .RegularPages }}
+		<li>
+			<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+			{{ if .Description }}
+			<p>{{ .Description }}</p>
+			{{ end }}
+		</li>
+		{{ end }}
+	</ol>
+{{ end }}

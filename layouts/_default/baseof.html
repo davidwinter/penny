@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+	{{ partial "head.html" . }}
+	<body{{ if ne .IsHome true }} class="post"{{ end }}>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-sm-6">
+					{{ partial "header.html" . -}}
+					<section class="content">
+					{{ block "main" . }}{{- end }}
+					</section>
+					{{ partial "footer.html" . -}}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

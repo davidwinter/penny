@@ -1,0 +1,12 @@
+name = "Penny"
+license = "MIT"
+licenselink = "https://github.com/davidwinter/penny/blob/main/LICENSE"
+description = "A simple and clean Hugo theme, focussing on the content"
+homepage = "https://github.com/davidwinter/penny"
+tags = []
+features = []
+min_version = "0.54.0"
+
+[author]
+  name = "David Winter"
+  homepage = "https://davidwinter.dev"

@@ -1,0 +1,15 @@
+<footer>
+	{{ if eq .Type "posts" }}
+		<div class="post_footer">
+			<p class="post_date">{{ .Date.Format "2006-01-02" }}</p>
+		</div>
+	{{ end }}
+
+	{{ if templates.Exists "partials/footerAdditional.html" }}
+	<div>
+		{{ partial "footerAdditional.html" . }}
+	</div>
+	{{ end }}
+
+	<p><a href="#top">&uarr;</a></p>
+</footer>
