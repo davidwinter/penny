@@ -3,9 +3,7 @@
 		{{ range where .Site.RegularPages "Type" "in" .Site.Params.homePageKinds }}
 		<li>
 			<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-			{{ if .Description }}
-			<p>{{ .Description }}</p>
-			{{ end }}
+			<p>{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ end }}{{ end }}</p>
 		</li>
 		{{ end }}
 	</ol>
