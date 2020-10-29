@@ -1,7 +1,7 @@
 name = "Penny"
 license = "MIT"
 licenselink = "https://github.com/davidwinter/penny/blob/main/LICENSE"
-description = "A simple and clean Hugo theme, focussing on the content"
+description = "a minimalist hugo theme"
 homepage = "https://github.com/davidwinter/penny"
 tags = []
 features = []
