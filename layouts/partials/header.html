@@ -8,7 +8,7 @@
 	{{ end }}
 
 	<ul>
-		{{ range .Site.Menus.header }}
+		{{ range .Site.Menus.header.ByWeight.Reverse }}
 		<li><a href="{{ .URL }}">{{ .Name }}</a></li>
 		{{ end }}
 	</ul>
