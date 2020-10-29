@@ -8,6 +8,8 @@
 			{{ .Site.Title }}
 		{{ end }}</title>
 
+		<link rel="icon" href="/{{ .Site.Params.image }}" />
+
 		{{- with .Site.Params.meta.description | default .Site.Params.description }}
 		<meta name="description" content="{{ . }}" />
 		{{- end -}}
