@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" id="top">
-	{{ partial "head.html" . }}
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>{{ block "title" . }}
+			{{ .Site.Title }}
+		{{ end }}</title>
+
+		{{- with .Site.Params.meta.description | default .Site.Params.description }}
+		<meta name="description" content="{{ . }}" />
+		{{- end -}}
+
+		{{- with .Site.Params.meta.keywords }}
+		<meta name="keywords" content="{{ . }}" />
+		{{- end -}}
+
+		{{- with .Site.Params.meta.author }}
+		<meta name="author" content="{{ . }}" />
+		{{- end -}}
+
+		{{- $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS | minify | fingerprint }}
+		<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+		{{- range .AlternativeOutputFormats }}
+		<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }}" />
+		{{- end -}}
+
+		{{ partial "headAdditional.html" . }}
+	</head>
+
 	<body{{ if ne .IsHome true }} class="post"{{ end }}>
 		<div class="container">
 			<div class="row justify-content-center">

@@ -11,10 +11,6 @@
 		{{ end }}
 	</ul>
 
-	{{ if templates.Exists "partials/headerAdditional.html" }}
-	<div>
-		{{ partial "headerAdditional.html" . }}
-	</div>
-	{{ end }}
+	{{ partial "headerAdditional.html" . }}
 
 </header>

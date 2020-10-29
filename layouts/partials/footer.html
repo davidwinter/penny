@@ -5,11 +5,7 @@
 		</div>
 	{{ end }}
 
-	{{ if templates.Exists "partials/footerAdditional.html" }}
-	<div>
-		{{ partial "footerAdditional.html" . }}
-	</div>
-	{{ end }}
+	{{ partial "footerAdditional.html" . }}
 
 	<p><a href="#top">&uarr;</a></p>
 </footer>
