@@ -3,6 +3,7 @@ params:
   image: penny.jpg
   image_alt: Photo of Penny
   title: Penny
+  description: a minimalist hugo theme
   homePageKinds:
     - post
     - posts
