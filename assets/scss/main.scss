@@ -78,8 +78,12 @@ footer {
 		border-top: 1px solid $border-color;
 	}
 
-	& > p a {
+	& > p.back_to_top a {
 		@extend .h4;
+	}
+
+	p.theme_credit {
+		@extend .text-muted;
 	}
 }
 
