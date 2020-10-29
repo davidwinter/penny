@@ -2,7 +2,7 @@
 
 > a minimalist hugo theme
 
-<img src="https://github.com/davidwinter/penny/raw/main/screenshot.png" width="250" alt="Penny" style="border-radius: 250px;"/>
+![Penny theme screenshot](https://github.com/davidwinter/penny/raw/main/screenshot.png)
 
 
 ## Setup
