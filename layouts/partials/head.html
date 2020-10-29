@@ -2,33 +2,30 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<meta name="description" content="{{ .Site.Params.meta.description | default .Site.Params.description }}" />
-	<meta name="keywords" content="{{ .Site.Params.meta.keywords }}" />
-	<meta name="author" content="{{ .Site.Params.meta.author }}" />
+	<title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
-	<title>{{ .Site.Title }}</title>
+	{{- with .Site.Params.meta.description | default .Site.Params.description }}
+	<meta name="description" content="{{ . }}" />
+	{{- end -}}
 
-	<meta name="twitter:site" content="{{ .Site.Params.meta.site }}" />
-	<meta name="twitter:creator" content="{{ .Site.Params.meta.creator }}" />
-	<meta name="twitter:domain" content="{{ .Site.Params.meta.domain }}" />
+	{{- with .Site.Params.meta.keywords }}
+	<meta name="keywords" content="{{ . }}" />
+	{{- end -}}
 
-	{{ if ne .IsHome true }}
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="{{ .Title }}" />
-	<meta name="twitter:description" content="{{ .Description }}" />
-	<meta name="twitter:image" content="{{ .Site.Params.image }}" />
+	{{- with .Site.Params.meta.author }}
+	<meta name="author" content="{{ . }}" />
+	{{- end -}}
 
-	<meta property="og:title" content="{{ .Title }}" />
-	<meta property="og:description" content="{{ .Description }}" />
-	<meta property="og:type" content="article" />
-	<meta property="og:url" content="{{ .Permalink }}" />
-	<meta property="og:image" content="{{ .Site.Params.image }}" />
-	{{ end -}}
-
-	{{ $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS | minify | fingerprint }}
+	{{- $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.Permalink }}">
 
-	{{ range .AlternativeOutputFormats -}}
+	{{- range .AlternativeOutputFormats }}
 	<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }}" />
-	{{ end -}}
+	{{- end -}}
+
+	{{- if templates.Exists "partials/headAdditional.html" }}
+	<div>
+		{{ partial "headAdditional.html" . }}
+	</div>
+	{{- end}}
 </head>

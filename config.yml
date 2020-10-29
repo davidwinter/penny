@@ -1,36 +1,8 @@
 ---
 params:
   image: penny.jpg
-  image_alt: Penny
-  title: Miss Moneypenny
-  description: my theme
-  meta:
-    description: meta here
-    keywords: dog, rescue
-    author: penny
-    twitter:
-      site: "@davidwinter"
-      creator: "@davidwinter"
-      domain: http://davidwinter.dev
-menu:
-  header:
-    - identifier: about
-      name: About
-      url: /about
-      weight: 0
-    - identifier: twitter
-      name: Twitter
-      url: https://twitter.com
-      weight: -1
-    - identifier: github
-      name: GitHub
-      url: https://github.com
-      weight: -2
-    - identifier: instagram
-      name: Instagram
-      url: https://instagram.com
-      weight: -3
-    - identifier: linkedin
-      name: LinkedIn
-      url: https://linkedin.com
-      weight: -4
+  image_alt: Photo of Penny
+  title: Penny
+  homePageKinds:
+    - post
+    - posts
