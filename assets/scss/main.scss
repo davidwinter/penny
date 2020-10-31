@@ -62,9 +62,37 @@ section.content {
 			line-height: 1.5;
         }
 
-        p {
-            text-align: justify;
-        }
+		%codeborder {
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			border: 1px solid #CACACA;
+			-moz-background-clip: padding;
+			-webkit-background-clip: padding-box;
+			background-clip: padding-box;
+			background-color: #F9F9F9;
+		}
+
+		pre {
+			@extend %codeborder;
+			padding: 10px;
+			overflow: auto;
+			overflow-x: auto;
+			white-space: pre;
+			background: #F9F9F9 !important;
+		}
+
+		p code, li code {
+			@extend %codeborder;
+			padding: 0 0.5em;
+			display: inline-block;
+			margin-bottom: 0;
+			font-size: 0.8em;
+		}
+
+		code, pre {
+			font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+		}
 	}
 }
 
