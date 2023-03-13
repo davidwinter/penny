@@ -1,5 +1,6 @@
 <header>
-	<img src="/{{ .Site.Params.image }}" alt="{{ .Site.Params.image_alt }}" />
+	{{- $site_image := resources.Get .Site.Params.image | fingerprint }}
+	<img src="{{ $site_image.Permalink }}" alt="{{ .Site.Params.image_alt }}" />
 
 	{{ if .IsHome }}<h1>{{ else }}<h3>{{ end }}
 	<a href="/">{{ .Site.Params.title }}</a>
