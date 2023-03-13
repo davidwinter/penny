@@ -4,7 +4,7 @@
 <title>{{ if not .IsHome }}{{ with .Title }}{{ . }} &ndash; {{ end }}{{ end }}{{ .Site.Title }}</title>
 
 {{- $favicon := resources.Get .Site.Params.image | fingerprint }}
-<link rel="icon" href="{{ $favicon.Permalink }}" />
+<link rel="icon" href="{{ $favicon.RelPermalink }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }}" />
@@ -13,10 +13,10 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 {{- $style := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}">
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 {{- range .AlternativeOutputFormats }}
-<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title | safeHTML }}" />
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ $.Site.Title | safeHTML }}" />
 {{- end -}}
 
 {{ partial "head_additional.html" . }}
