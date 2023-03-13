@@ -3,7 +3,8 @@
 
 <title>{{ if not .IsHome }}{{ with .Title }}{{ . }} &ndash; {{ end }}{{ end }}{{ .Site.Title }}</title>
 
-<link rel="icon" href="/{{ .Site.Params.image }}" />
+{{- $favicon := resources.Get .Site.Params.image | fingerprint }}
+<link rel="icon" href="{{ $favicon.Permalink }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end }}{{ end }}" />
